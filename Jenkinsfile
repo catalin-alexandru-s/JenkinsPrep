@@ -18,8 +18,7 @@ pipeline {
                 echo 'Testing process...'
                 sh '''
                 python3 --version
-                sudo apt-get update
-                sudo apt install python3-pip
+                python3 test.py
                 '''
             }
         }
@@ -28,6 +27,7 @@ pipeline {
                 echo 'Deployment process...'
                 sh '''
                 cat req.txt | grep text
+                
                 '''
                 echo "Today is ${env.DATE}"
             }

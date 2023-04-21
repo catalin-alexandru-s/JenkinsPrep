@@ -18,6 +18,7 @@ pipeline {
                 echo 'Testing process...'
                 sh '''
                 python3 --version
+                sudo apt-get update
                 sudo apt install python3-pip
                 '''
             }

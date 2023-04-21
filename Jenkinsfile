@@ -2,14 +2,14 @@ pipeline {
     agent any
     
     environment {
-        DATE = "19.04.2023"
+        DATE = "21.04.2023"
     }
     stages {
         stage('Build') {
             steps {
                 echo 'Building process...'
                 sh '''
-                cat > req.txt
+                cat test.py
                 '''
             }
         }
@@ -17,8 +17,8 @@ pipeline {
             steps {
                 echo 'Testing process...'
                 sh '''
-                echo "some text here" > req.txt
                 python3 --version
+                sudo apt install python3-pip
                 '''
             }
         }
